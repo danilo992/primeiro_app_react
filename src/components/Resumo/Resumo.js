@@ -6,24 +6,24 @@ class Resumo extends Component {
         super(props);
         this.state = {
             consultas : {
-                consultas_30dias_anteriores : 87,
-                consultas_30dias_posteriores : 79
+                consultas_30dias_anteriores : 0,
+                consultas_30dias_posteriores : 0
             },
             faturamento : {
                 anterior : {
-                    valor: 100.00,
-                    comparativo : 19
+                    valor: 0,
+                    comparativo : 0
                 },
                 previsao : {
-                    valor: 90.00,
-                    comparativo : -10
+                    valor: 0,
+                    comparativo : 0
                 }
             }
         }
     }
  
     componentDidMount(){
-        fetch("http://www.devup.com.br/php/api-dashboard/api")
+        fetch("http://www.devup.com.br/php/api-dashboard/api/resumo")
         .then(resultado => resultado.json().then(dados => this.setState(dados)));
     }
  
@@ -81,7 +81,7 @@ class Resumo extends Component {
                   <div className="col">
                       <div className="card mt-2 text-center">
                           <div className="card-header">
-                              Pr?ximos 30 dias
+                              Próximos 30 dias
                           </div>
                           <div className="card-body">
                               { this.state.faturamento.previsao.valor.toLocaleString("pt-BR", { style : "currency",
