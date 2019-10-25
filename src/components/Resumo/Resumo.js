@@ -50,7 +50,7 @@ class Resumo extends Component {
                   <div className="col">
                       <div className="card mt-2 text-center">
                           <div className="card-header">
-                              Pr?ximos 30 dias
+                              Próximos 30 dias
                           </div>
                           <div className="card-body">
                               { this.state.consultas.consultas_30dias_posteriores }
